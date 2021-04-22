@@ -10,6 +10,8 @@ func _ready():
 	
 	if level == 1:
 		time = 10
+	if level == 2:
+		time = 15
 	
 
 func _unhandled_input(event):
@@ -30,8 +32,11 @@ func change_time():
 		time -= 1
 		if time <= 0:
 			time = 0
+			get_tree().change_scene("res://Levels/TestLevelB.tscn")
+	if level == 2:
+		time -= 1
+		if time <= 0:
+			time = 0
 			get_tree().change_scene("res://UI/Main Menu.tscn")
-	else:
-		time += 1
 	emit_signal("time_changed")
 
