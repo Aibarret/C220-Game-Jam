@@ -9,6 +9,8 @@ export var player_name : String
 export var variant : int
 export var fate : String
 
+var active = true
+
 var velocity = Vector2(0.0, 0.0)
 var normal_gravity = 1550.0
 var jump_gravity = 900.0
@@ -46,11 +48,13 @@ func _physics_process(delta):
 		jump_released = true
 	velocity += acceleration * delta
 	velocity = move_and_slide(velocity, Vector2.UP, false)
-	handle_direction(Input.is_action_pressed("left"), Input.is_action_pressed("right"))
+	handle_direction(get_input_pressed("left"), get_input_pressed("right"))
 	if is_on_wall():
 		velocity.x = 0
 	coyote_time -= delta # delta because it's in seconds
-	"""
+	
+	# this is how it interacts with the tilemap, since we don't really have any tiles yet, this doesn't mean anything
+	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider == tilemap:
@@ -61,6 +65,7 @@ func _physics_process(delta):
 					if tile == 14 or tile == 15: # steven tile
 						die()
 	var tile = get_tile_at_pos(position)
+	"""
 	match tile:
 		2: # spikes
 			die()
@@ -104,7 +109,6 @@ func set_animation(anim):
 	if $AnimatedSprite.animation != anim:
 		$AnimatedSprite.play(anim)
 
-
 func _on_AnimatedSprite_animation_finished():
 	pass
 
@@ -112,3 +116,14 @@ func handle_direction(isleft, isright):
 	if isleft != isright:
 		flipH = isleft
 
+func get_input_pressed(control):
+	if active:
+		return Input.is_action_pressed(control)
+	else:
+		return false
+
+func get_input_just_pressed(control):
+	if active:
+		return Input.is_action_just_pressed(control)
+	else:
+		return false
