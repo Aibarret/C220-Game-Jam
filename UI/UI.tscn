@@ -21,11 +21,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="HUD"]
+[node name="Time" type="Label" parent="HUD"]
 margin_right = 512.0
 margin_bottom = 40.0
-text = "Score:"
+text = "Time:"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="HUD"]
+autostart = true
 
 [node name="Menu" type="Control" parent="."]
 pause_mode = 2
@@ -45,29 +51,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Save" type="Button" parent="Menu"]
-margin_left = 462.0
-margin_top = 200.0
-margin_right = 562.0
-margin_bottom = 240.0
-text = "Save Game"
-
-[node name="Load" type="Button" parent="Menu"]
-margin_left = 462.0
-margin_top = 280.0
-margin_right = 562.0
-margin_bottom = 320.0
-text = "Load Game"
-
 [node name="Quit" type="Button" parent="Menu"]
 margin_left = 462.0
-margin_top = 360.0
+margin_top = 275.0
 margin_right = 562.0
-margin_bottom = 400.0
+margin_bottom = 315.0
 text = "Quit Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Menu/Save" to="Menu" method="_on_Save_pressed"]
-[connection signal="pressed" from="Menu/Load" to="Menu" method="_on_Load_pressed"]
+[connection signal="timeout" from="HUD/Timer" to="HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Menu/Quit" to="Menu" method="_on_Quit_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Main Menu.gd" type="Script" id=1]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 420.0
+text = "EVERY DEATH COUNTS!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 335.0
+margin_right = 562.0
+margin_bottom = 385.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 400.0
+margin_right = 562.0
+margin_bottom = 450.0
+text = "Quit"
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
