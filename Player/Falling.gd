@@ -23,12 +23,12 @@ func physics_process(_delta):
 	if myEnt.is_on_ceiling() and myEnt.velocity.y <= 0:
 		myEnt.velocity.y = 0
 	#air movement, no automatic decelleration 
-	if Input.is_action_pressed("left"):
+	if myEnt.get_input_pressed("left"):
 		myEnt.velocity.x = weightedSum(myEnt.velocity.x, 0.8, -myEnt.move_speed, 0.2)
-	if Input.is_action_pressed("right"):
+	if myEnt.get_input_pressed("right"):
 		myEnt.velocity.x = weightedSum(myEnt.velocity.x, 0.8, myEnt.move_speed, 0.2)
-	if myEnt.is_on_floor() and myEnt.jump_released and Input.is_action_pressed("up"):
+	if myEnt.is_on_floor() and myEnt.jump_released and myEnt.get_input_pressed("up"):
 		SM.set_state("Jumping")
-	if myEnt.coyote_time > 0 and myEnt.jump_released and Input.is_action_pressed("up"):
+	if myEnt.coyote_time > 0 and myEnt.jump_released and myEnt.get_input_pressed("up"):
 		SM.set_state("Jumping")
 		print("coyote jump!")
