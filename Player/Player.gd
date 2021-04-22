@@ -5,6 +5,10 @@ onready var Global = get_node("/root/Global")
 onready var SM = $StateMachine
 onready var tilemap = get_node_or_null("/root/Game/TileMap")
 
+export var player_name : String
+export var variant : int
+export var fate : String
+
 var velocity = Vector2(0.0, 0.0)
 var normal_gravity = 1550.0
 var jump_gravity = 900.0
@@ -21,11 +25,11 @@ var respawn_time = 2.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Name.text = player_name
 	add_to_group("Player")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$State.text = SM.state_name
 	$AnimatedSprite.flip_h = flipH
 	#$AnimatedSprite.offset.x = 1 if flipH else -1
 	#if velocity.y > 0 and $AnimatedSprite.animation == "Jumping":
@@ -94,6 +98,7 @@ func set_tile_at_pos(pos, tile):
 
 func die():
 	SM.set_state("Dead")
+	print(player_name + " " + fate)
 	
 func set_animation(anim):
 	if $AnimatedSprite.animation != anim:

@@ -21,7 +21,7 @@ func physics_process(_delta):
 			SM.set_state("Idle")
 		else:
 			SM.set_state("Moving")
-	if myEnt.velocity.y > 0 and myEnt.get_node("RobotGirl").animation == "Jumping":
+	if myEnt.velocity.y > 0 and myEnt.get_node("AnimatedSprite").animation == "Jumping":
 		myEnt.set_animation("Falling_Start")
 	#air movement, no automatic decelleration 
 	if Input.is_action_pressed("left"):
