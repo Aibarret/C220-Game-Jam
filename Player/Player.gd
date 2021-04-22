@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var Global = get_node("/root/Global")
 
 onready var SM = $StateMachine
-onready var tilemap = get_node_or_null("/root/Game/TileMap")
+onready var tilemap = get_parent().get_parent().get_node_or_null("TileMap")
 
 export var player_name : String
 export var variant : int
