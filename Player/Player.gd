@@ -65,8 +65,8 @@ func _physics_process(delta):
 			for x in [-1, 1]:
 				for y in [-1, 1]:
 					var tile = get_tile_at_pos(collision.position + Vector2(x * 0.1, y * 0.1))
-					if tile == 14 or tile == 15: # steven tile
-						die()
+					#if tile == 14 or tile == 15: # steven tile
+					#	die()
 	var tile = get_tile_at_pos(position)
 	
 	match tile:
