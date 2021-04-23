@@ -1,7 +1,13 @@
 extends Node
 
 var time = 0
-var level = 1
+var level = 0
+
+var level_list = [
+	"res://UI/Main Menu.tscn", # 0
+	"res://Levels/TestLevelA.tscn", # 1
+	"res://Levels/TestLevelB.tscn" # 2
+]
 
 signal time_changed
 
@@ -39,4 +45,9 @@ func change_time():
 			time = 0
 			get_tree().change_scene("res://UI/Main Menu.tscn")
 	emit_signal("time_changed")
+	
+func next_level():
+	level += 1
+	if level < level_list.size() and level >= 0:
+		get_tree().change_scene(level_list[level])
 
