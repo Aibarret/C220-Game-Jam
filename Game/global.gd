@@ -31,9 +31,10 @@ func change_time():
 	if level == 1:
 		time -= 1
 		if time <= 0:
-			time = 0
+			level = 2
+			time = 15
 			get_tree().change_scene("res://Levels/TestLevelB.tscn")
-	if level == 2:
+	elif level == 2:
 		time -= 1
 		if time <= 0:
 			time = 0
