@@ -13,6 +13,11 @@ position = Vector2( 45.3845, 93.0065 )
 player_name = "Arnold"
 fate = "died."
 
+[node name="Camera2D" type="Camera2D" parent="Players/Player"]
+current = true
+zoom = Vector2( 2, 2 )
+smoothing_enabled = true
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
 tile_set = ExtResource( 2 )
@@ -22,10 +27,6 @@ tile_data = PoolIntArray( -3, 536870921, 0, 65530, 536870912, 0, 65531, 53687092
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 2, 2 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
 

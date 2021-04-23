@@ -25,8 +25,11 @@ var coyote_time = 0.0
 var dead_timer = 0.0
 var respawn_time = 2.0
 
+var initial_position = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initial_position = position
 	$Name.text = player_name
 	add_to_group("Player")
 
@@ -42,12 +45,12 @@ func _physics_process(delta):
 		#$CollisionPolygon2D.disabled = true
 		dead_timer += delta
 		if dead_timer > respawn_time:
-			pass
+			respawn()
 		return
 	if Input.is_action_just_released("up"):
 		jump_released = true
 	velocity += acceleration * delta
-	velocity = move_and_slide(velocity, Vector2.UP, false)
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
 	handle_direction(get_input_pressed("left"), get_input_pressed("right"))
 	if is_on_wall():
 		velocity.x = 0
@@ -87,6 +90,11 @@ func set_tile_at_pos(pos, tile):
 func die():
 	SM.set_state("Dead")
 	print(player_name + " " + fate)
+	
+func respawn():
+	SM.set_state("Idle")
+	position = initial_position
+	visible = true
 	
 func set_animation(anim):
 	if $AnimatedSprite.animation != anim:
