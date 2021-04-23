@@ -6,7 +6,8 @@ var level = 0
 var level_list = [
 	"res://UI/Main Menu.tscn", # 0
 	"res://Levels/TestLevelA.tscn", # 1
-	"res://Levels/TestLevelB.tscn" # 2
+	"res://Levels/TestLevelB.tscn", # 2
+	"res://Levels/TestLevelC.tscn" #3
 ]
 
 signal time_changed
@@ -16,8 +17,6 @@ func _ready():
 	
 	if level == 1:
 		time = 10
-	if level == 2:
-		time = 15
 	
 
 func _unhandled_input(event):
@@ -34,21 +33,17 @@ func _unhandled_input(event):
 
 
 func change_time():
-	if level == 1:
-		time -= 1
-		if time <= 0:
-			level = 2
-			time = 15
-			get_tree().change_scene("res://Levels/TestLevelB.tscn")
-	elif level == 2:
-		time -= 1
-		if time <= 0:
-			time = 0
-			get_tree().change_scene("res://UI/Main Menu.tscn")
+	time -= 1
+	if time <= 0:
+		next_level()
 	emit_signal("time_changed")
 	
 func next_level():
 	level += 1
 	if level < level_list.size() and level >= 0:
+		time = 10
+		get_tree().change_scene(level_list[level])
+	if level >= level_list.size():
+		level = 0
 		get_tree().change_scene(level_list[level])
 
