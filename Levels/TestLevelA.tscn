@@ -54,3 +54,5 @@ current = true
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 265.096, -34.9228 )
+
+[node name="Entities" type="Node2D" parent="."]

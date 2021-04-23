@@ -28,3 +28,5 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
+
+[node name="Entities" type="Node2D" parent="."]
