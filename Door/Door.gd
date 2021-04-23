@@ -7,4 +7,4 @@ func _ready():
 
 func _on_Door_body_entered(body):
 	if body.name == "Player":
-		Global.next_level()
+		Global.next_level_alternate()

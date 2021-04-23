@@ -10,6 +10,13 @@ var level_list = [
 	"res://Levels/TestLevelC.tscn" #3
 ]
 
+var level_list_alternate = [
+	"res://UI/Main Menu.tscn", # 0
+	"res://Levels/TestLevelA.tscn", # 1
+	"res://Levels/TestLevelBAlternate.tscn", # 2
+	"res://Levels/TestLevelCAlternate.tscn" #3
+]
+
 signal time_changed
 
 func _ready():
@@ -47,3 +54,11 @@ func next_level():
 		level = 0
 		get_tree().change_scene(level_list[level])
 
+func next_level_alternate():
+	level += 1
+	if level < level_list_alternate.size() and level >= 0:
+		time += 10
+		get_tree().change_scene(level_list_alternate[level])
+	if level >= level_list_alternate.size():
+		level = 0
+		get_tree().change_scene(level_list_alternate[level])
