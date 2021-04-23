@@ -7,14 +7,16 @@ var level_list = [
 	"res://UI/Main Menu.tscn", # 0
 	"res://Levels/TestLevelA.tscn", # 1
 	"res://Levels/TestLevelB.tscn", # 2
-	"res://Levels/TestLevelC.tscn" #3
+	"res://Levels/TestLevelC.tscn", #3
+	"res://Levels/TestLevelD.tscn" #4
 ]
 
 var level_list_alternate = [
 	"res://UI/Main Menu.tscn", # 0
 	"res://Levels/TestLevelA.tscn", # 1
 	"res://Levels/TestLevelBAlternate.tscn", # 2
-	"res://Levels/TestLevelCAlternate.tscn" #3
+	"res://Levels/TestLevelCAlternate.tscn", #3
+	"res://Levels/TestLevelDAlternate.tscn" #4
 ]
 
 signal time_changed
