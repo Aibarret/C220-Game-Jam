@@ -65,28 +65,11 @@ func _physics_process(delta):
 					if tile == 14 or tile == 15: # steven tile
 						die()
 	var tile = get_tile_at_pos(position)
-	"""
+	
 	match tile:
-		2: # spikes
+		7: # spikes
 			die()
-		4: # uppinators
-			velocity.y += -Global.antigrav_tile_strength * delta
-			if SM.state_name != "Falling":
-				SM.set_state("Falling")
-			set_animation("Falling")
-		6: # oil
-			set_tile_at_pos(position, TileMap.INVALID_CELL)
-			Global.score += 1
-		13: # oil on bg
-			set_tile_at_pos(position, 12) # set to bg
-			Global.score += 1
-		16: # door, top
-			Global.load_next_level()
-			return
-		17: # door, bottom
-			Global.load_next_level()
-			return
-	"""
+	
 	
 func get_tile_at_pos(pos):
 	var input_position = pos - tilemap.position
