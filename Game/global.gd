@@ -1,6 +1,6 @@
 extends Node
 
-var time = 0
+var time = 10
 var level = 0
 
 var level_list = [
