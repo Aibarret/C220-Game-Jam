@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://StateMachine/StateMachine.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/Dead.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Placeholder.png" type="Texture" id=8]
 [ext_resource path="res://UI/var-pixel/var-pixel.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Tombstone/Tombstone.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -46,6 +47,7 @@ script = ExtResource( 6 )
 
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
+Tombstone = ExtResource( 10 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2( 5, 5 )
