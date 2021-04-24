@@ -99,13 +99,15 @@ func die():
 	SM.set_state("Dead")
 	print(player_name + " " + fate)
 	$Die.play()
+	$CollisionPolygon2D.disabled = true
 	
 func respawn():
-	SM.set_state("Idle")
 	position = initial_position
+	SM.set_state("Idle")
 	visible = true
 	dead_timer = 0.0
 	$Respawn.play()
+	$CollisionPolygon2D.disabled = false
 	
 func set_animation(anim):
 	if $AnimatedSprite.animation != anim:
