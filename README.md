@@ -12,6 +12,8 @@ Arnold, Mike, and Griffin have set out to uncover a lost artifact in the ancient
 W: Jump
 A/D: Move Left/Right
 
+If you don't complete a level in time the next level will be harder.
+
 ## Impediments
 Tombstones are surprisingly mobile
 
