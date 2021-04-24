@@ -14,6 +14,8 @@ func start():
 	myEnt.jump_released = false
 	myEnt.set_animation("Jumping")
 	myEnt.coyote_time = 0.0
+	myEnt.get_node("Jump").pitch_scale = randf() * 0.5 + 0.75
+	myEnt.get_node("Jump").play()
 
 func physics_process(_delta):
 	if myEnt.is_on_floor():

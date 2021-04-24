@@ -28,7 +28,7 @@ var flipH = false
 var default_coyote_time = 4.0 / 60.0 # seconds
 var coyote_time = 0.0
 var dead_timer = 0.0
-var respawn_time = 2.0
+var respawn_time = 1.0
 
 var initial_position = Vector2.ZERO
 
@@ -98,11 +98,14 @@ func set_tile_at_pos(pos, tile):
 func die():
 	SM.set_state("Dead")
 	print(player_name + " " + fate)
+	$Die.play()
 	
 func respawn():
 	SM.set_state("Idle")
 	position = initial_position
 	visible = true
+	dead_timer = 0.0
+	$Respawn.play()
 	
 func set_animation(anim):
 	if $AnimatedSprite.animation != anim:
