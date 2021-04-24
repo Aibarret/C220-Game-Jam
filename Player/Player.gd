@@ -50,7 +50,7 @@ func _physics_process(delta):
 	if Input.is_action_just_released("up"):
 		jump_released = true
 	velocity += acceleration * delta
-	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/3, false)
 	handle_direction(get_input_pressed("left"), get_input_pressed("right"))
 	if is_on_wall():
 		velocity.x = 0
