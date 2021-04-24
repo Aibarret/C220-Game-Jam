@@ -17,6 +17,7 @@ tile_data = PoolIntArray( -655342, -536870912, 0, -655341, -536870912, 0, -65534
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player" parent="Players" instance=ExtResource( 5 )]
+player_name = "Mike"
 variant = 2
 
 [node name="Camera2D" type="Camera2D" parent="Players/Player"]

@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="Player" parent="Players" instance=ExtResource( 1 )]
 position = Vector2( 45.3845, 93.0065 )
-player_name = "Arnold"
+player_name = "Griffin"
 variant = 3
 fate = "died."
 
