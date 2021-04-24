@@ -7,10 +7,7 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-<<<<<<< Updated upstream
 position = Vector2( 0, -13 )
-=======
->>>>>>> Stashed changes
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 
