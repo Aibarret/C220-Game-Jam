@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+onready var variants = [load("res://Player/Placeholder.tres"),
+						load("res://Player/Arnold.tres"),
+						load("res://Player/Mike.tres"),
+						load("res://Player/Griffin.tres")]
+
 onready var Global = get_node("/root/Global")
 
 onready var SM = $StateMachine
@@ -29,6 +34,9 @@ var initial_position = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite.frames = variants[variant]
+	if variant == 0:
+		$AnimatedSprite.scale = Vector2(5,5)
 	initial_position = position
 	$Name.text = player_name
 	add_to_group("Player")
