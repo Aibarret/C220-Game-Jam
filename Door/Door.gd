@@ -2,13 +2,13 @@ extends Area2D
 
 onready var Global = get_node("/root/Global")
 
-export var door_texture : Texture
+export var is_orb = false
 
 var open = true
 
 func _ready():
-	if door_texture != null:
-		$Sprite.texture = door_texture 
+	$Sprite.visible = not is_orb
+	$AnimatedSprite.visible = is_orb
 
 func _on_Door_body_entered(body):
 	if body.name == "Player" and open:
