@@ -1,22 +1,28 @@
 extends Node
 
-var time = 10
+var time = 30
 var level = 0
 
 var level_list = [
 	"res://UI/Main Menu.tscn", # 0
-	"res://Levels/TestLevelA.tscn", # 1
-	"res://Levels/TestLevelB.tscn", # 2
-	"res://Levels/TestLevelC.tscn", #3
-	"res://Levels/TestLevelD.tscn" #4
+	"res://UI/Intro.tscn", #1
+	"res://Levels/TestLevelA.tscn", # 2
+	"res://Levels/TestLevelB.tscn", # 3
+	"res://Levels/TestLevelC.tscn", #4
+	"res://Levels/TestLevelD.tscn", #5
+	"res://UI/Lose.tscn", #6
+	"res://UI/Credits.tscn" #7
 ]
 
 var level_list_alternate = [
 	"res://UI/Main Menu.tscn", # 0
-	"res://Levels/TestLevelA.tscn", # 1
-	"res://Levels/TestLevelBAlternate.tscn", # 2
-	"res://Levels/TestLevelCAlternate.tscn", #3
-	"res://Levels/TestLevelDAlternate.tscn" #4
+	"res://UI/Intro.tscn", #1
+	"res://Levels/TestLevelA.tscn", # 2
+	"res://Levels/TestLevelBAlternate.tscn", # 3
+	"res://Levels/TestLevelCAlternate.tscn", #4
+	"res://Levels/TestLevelDAlternate.tscn", #5
+	"res://UI/Win Scene.tscn", #6
+	"res://UI/Credits.tscn" #7
 ]
 
 signal time_changed

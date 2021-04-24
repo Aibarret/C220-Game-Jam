@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Win Scene.gd" type="Script" id=1]
+
+[node name="Win Scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 225.0
+margin_right = 712.0
+margin_bottom = 344.0
+text = "You have made your way through the temple, and have recovered the jewel that shall make our heros famous and rich beyond their wildest dreams!
+
+Congratulations, and thanks for playing!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 450.0
+margin_right = 562.0
+margin_bottom = 500.0
+text = "Next"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

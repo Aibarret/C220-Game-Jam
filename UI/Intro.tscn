@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Intro.gd" type="Script" id=1]
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 100.0
+margin_right = 712.0
+margin_bottom = 400.0
+text = "Arnold, Milke, and Griffin have set out to uncover a lost artifact in the ancient tomb of Tutrun. However, they soon found that strange things have started happening. When they have died to the traps, they have been able to come back to life for short periods of time. However, they sense that if they do not retrieve this artifact soon, they'll be trapped in this tomb forever, and all of the lives they've lived will have gone to waste.
+
+W: Jump
+A/D: Move Left/Right"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 450.0
+margin_right = 562.0
+margin_bottom = 500.0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

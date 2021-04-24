@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Assets/AAA.png" type="Texture" id=2]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 100.0
+margin_right = 712.0
+margin_bottom = 400.0
+text = "Credits:
+
+Programming:
+Aidan Lesh and Adan Molina
+
+Art and Assets:
+Aidan Barret
+
+Sound and Music: 
+Aidan Lesh"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 450.0
+margin_right = 562.0
+margin_bottom = 500.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 512, 335 )
+scale = Vector2( 1.84434, 1.53886 )
+texture = ExtResource( 2 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
