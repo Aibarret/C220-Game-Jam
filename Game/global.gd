@@ -9,9 +9,8 @@ var level_list = [
 	"res://Levels/TestLevelA.tscn", # 2
 	"res://Levels/TestLevelB.tscn", # 3
 	"res://Levels/TestLevelC.tscn", #4
-	"res://Levels/TestLevelD.tscn", #5
-	"res://UI/Lose.tscn", #6
-	"res://UI/Credits.tscn" #7
+	"res://UI/Lose.tscn", #5
+	"res://UI/Credits.tscn" #6
 ]
 
 var level_list_alternate = [
@@ -20,9 +19,8 @@ var level_list_alternate = [
 	"res://Levels/TestLevelA.tscn", # 2
 	"res://Levels/TestLevelBAlternate.tscn", # 3
 	"res://Levels/TestLevelCAlternate.tscn", #4
-	"res://Levels/TestLevelDAlternate.tscn", #5
-	"res://UI/Win Scene.tscn", #6
-	"res://UI/Credits.tscn" #7
+	"res://UI/Win Scene.tscn", #5
+	"res://UI/Credits.tscn" #6
 ]
 
 signal time_changed
