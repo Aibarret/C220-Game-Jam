@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Heavy_Duty_Super-Colliding_Super_Button.png" type="Texture" id=1]
+[ext_resource path="res://Button/Button.gd" type="Script" id=2]
+[ext_resource path="res://Assets/ButtonPressed.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/ButtonDepressed.wav" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Pressed",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "Depressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 55, 10 )
+
+[node name="Button" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Button" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 3 )
+animation = "Depressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 55 )
+shape = SubResource( 4 )
+
+[node name="Pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -25.0
+
+[node name="Depressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -29.0
+[connection signal="body_entered" from="." to="." method="_on_Button_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Button_body_exited"]

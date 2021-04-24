@@ -2,9 +2,20 @@ extends Area2D
 
 onready var Global = get_node("/root/Global")
 
+var open = true
+
 func _ready():
 	pass 
 
 func _on_Door_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and open:
 		Global.next_level_alternate()
+
+
+func open():
+	modulate = Color(1.0, 1.0, 1.0, 1.0)
+	open = true
+	
+func close():
+	modulate = Color(0.4, 0.4, 0.4, 1.0)
+	open = false
