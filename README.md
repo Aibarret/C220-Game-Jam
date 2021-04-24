@@ -26,7 +26,7 @@ All art assets created by Aidan Barrett
 ## Future Development
 N/A
 
-# Created by: Group Name
+# Created by: Team AAA
 Aidan Barrett (Art, Level Design)
 Aidan Lesh (Programming, Art)
 Aidan Molina (Programming)
