@@ -43,11 +43,11 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "Falling",
+"name": "Falling_Start",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
@@ -55,13 +55,13 @@ animations = [ {
 "name": "Jumping",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "Falling",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "Running",
 "speed": 12.0
-}, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "Falling_Start",
-"speed": 5.0
 } ]
