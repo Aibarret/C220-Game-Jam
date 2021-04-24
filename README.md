@@ -30,5 +30,5 @@ N/A
 
 # Created by: Team AAA
 Aidan Barrett (Art, Level Design)
-Aidan Lesh (Programming, Art)
+Aidan Lesh (Programming, Sound)
 Aidan Molina (Programming)
