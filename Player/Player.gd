@@ -55,6 +55,7 @@ func _physics_process(delta):
 		if dead_timer > respawn_time:
 			respawn()
 		return
+	$CollisionPolygon2D.disabled = false
 	if Input.is_action_just_released("up"):
 		jump_released = true
 	velocity += acceleration * delta
@@ -107,7 +108,7 @@ func respawn():
 	visible = true
 	dead_timer = 0.0
 	$Respawn.play()
-	$CollisionPolygon2D.disabled = false
+	
 	
 func set_animation(anim):
 	if $AnimatedSprite.animation != anim:
